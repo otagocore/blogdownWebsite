@@ -1,166 +1,265 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>plot</title>
+        <style>
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    html body {
+        font-family: 'Mina', sans-serif;
+        background-color: #f5f5f5;
+    }
 
-    <meta name="author" content="University of Otago Core Repository">
-    <meta name="description" content="">
+    :root {
+        --accent: #386890;
+        --border-width:  0 ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mina">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=VT323">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/lakeside-light.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
+    
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+
+
+<script>
+$(document).ready(function(){
+    
+  var input = $('#night-mode-toggle');
+  var container = $('#bigbody');
+  var stat = $('#button-status');
+  
+  container.toggleClass(localStorage.toggled);
+  stat.bootstrapToggle(localStorage.button).change();
+  
+  input.on('click', function() {
+      if (localStorage.toggled != "-nightmode" ) {
+          container.toggleClass("-nightmode", true );
+          localStorage.toggled = "-nightmode";
+          localStorage.button = "on";
+       } else {
+          container.toggleClass("-nightmode", false );
+          localStorage.toggled = "";
+          localStorage.button = "off"
+       }
+  })
+});
+</script>
+ <meta name="generator" content="Hugo 0.55.6" />
+        
+        <link href="/tags/plot/index.xml" rel="alternate" type="application/rss+xml" title="min_night" />
+        <link href="/tags/plot/index.xml" rel="feed" type="application/rss+xml" title="min_night" />
+        
+        
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#000000">
+    <link rel="shortcut icon" href="/img/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/img/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
     
     
-    <meta property="og:site_name" content="Otago Core Repository">
-    <meta property="og:title" content="
-  plot - Otago Core Repository
-">
+    
+    <meta property="og:title" content="plot">
+    <meta property="og:type" content="article">
+      
+      <meta name="twitter:card" content="summary">
+      <meta name="twitter:image" content="/favicon/android-chrome-192x192.png" >
+      
+    <meta property="description" content="">
     <meta property="og:description" content="">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="/tags/plot/">
-    <meta property="og:image" content="/images/tn.png">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="/tags/plot/">
-    <meta name="twitter:image" content="/images/tn.png">
-
-    <base href="/tags/plot/">
-    <title>
-  plot - Otago Core Repository
-</title>
-
-    <link rel="canonical" href="/tags/plot/">
     
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:site" content="">
     
-    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
-    <link rel="stylesheet" href="/css/normalize.min.css">
-    <link rel="stylesheet" href="/css/style.min.css">
+    </head>
 
     
-
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
     
 
-    <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+    <body id = "bigbody">
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand visible-xs" href="#">plot</a>
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/">Home</a></li>
+                            
+                                <li><a href="/post/">Posts</a></li>
+                            
+                                <li><a href="/equipment/equipment">Equipment</a></li>
+                            
+                                <li><a href="/tags/">Tags</a></li>
+                            
+                                <li><a href="/forms/">Forms</a></li>
+                            
+                        </ul>
+                    
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:nathancday@gmail.com"><i class="far fa-envelope"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/NathanCDay"><i class="fab fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/natedayta/"><i class="fab fa-twitter"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/nathan-day-59b48435/"><i class="fab fa-linkedin"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.stackoverflow.com/users/5878751/nate"><i class="fab fa-stack-overflow"></i></a></li>
+                            
+                            <li id="night-mode-toggle">
+    <input type="checkbox" id = "button-status"
+        data-toggle="toggle"
+        data-width = "10"
+        data-height = "1"
+        data-on="<i class='far fa-moon fa-lg'></i>"
+        data-off= "<i class='far fa-sun fa-lg'></i>"
+        data-style="ios"
+        data-onstyle = "default">
+</li>
+                        </ul>
+                    
+                </div>
+            </div>
+        </nav>
+
+
+<main>
+    <h2>plot</h2>
 
     
-      <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Otago Core Repository">
-      <link href="/index.xml" rel="feed" type="application/rss+xml" title="Otago Core Repository" />
-    
-
-    <meta name="generator" content="Hugo 0.55.6" />
-  </head>
-
-  <body class="">
-    <main class="wrapper">
-      <nav class="navigation">
-  <section class="container">
-    <a class="navigation-title" href="/">Otago Core Repository</a>
-    <input type="checkbox" id="menu-control"/>
-    <label class="menu-mobile  float-right " for="menu-control">
-      <span class="btn-mobile  float-right ">&#9776;</span>
-      <ul class="navigation-list">
         
-          
-            <li class="navigation-item  align-center ">
-              <a class="navigation-link" href="/about">About</a>
-            </li>
-          
-            <li class="navigation-item  align-center ">
-              <a class="navigation-link" href="/about">Test</a>
-            </li>
-          
-            <li class="navigation-item  align-center ">
-              <a class="navigation-link" href="/posts">Blog</a>
-            </li>
-          
-            <li class="navigation-item  align-center ">
-              <a class="navigation-link" href="/projects">Projects</a>
-            </li>
-          
-            <li class="navigation-item  align-center ">
-              <a class="navigation-link" href="/contact">Contact me</a>
-            </li>
-          
-        
-        
-      </ul>
-    </label>
-  </section>
-</nav>
+            <div class="item">
+    
 
 
-      <div class="content">
-        
-  <section class="container list">
-  <h1 class="title">plot</h1>
-  <ul>
-    
-    <li>
-      <span>July 23, 2015</span><a href="/post/2015-07-23-r-rmarkdown/">Hello R Markdown</a>
-    </li>
-    
-  </ul>
+
+
+
+
   
 
 
-
-
-
-
-</section>
-
-
-      </div>
-      
-        <footer class="footer">
-  <section class="container">
+<h4><a href="/2015/07/23/hello-r-markdown/">Hello R Markdown</a></h4>
+    <h5>July 23, 2015</h5>
+    <h5></h5>
     
-      <div class="sns-shares sp-sns-shares">
-        <a class="sns-share twitter-share" href="https://twitter.com/intent/tweet?original_referer=%2ftags%2fplot%2f&ref_src=twsrc%5Etfw&text=plot Otago%20Core%20Repository&tw_p=tweetbutton&url=%2ftags%2fplot%2f"><i class="fab fa-twitter"></i></a>
-        <a class="fb btn sns-share fb-share" href="http://www.facebook.com/share.php?u=%2ftags%2fplot%2f" onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fab fa-facebook-f"></i></a>
-        <a class="sns-share hatena-share" href="http://b.hatena.ne.jp/entry//tags/plot/"  data-hatena-bookmark-layout="touch" data-hatena-bookmark-width="40" data-hatena-bookmark-height="40" title="このエントリーをはてなブックマークに追加"><i class="fas fa-bookmark"></i></a>
-        <a class="sns-share line-share" href="https://social-plugins.line.me/lineit/share?url=%2ftags%2fplot%2f"><i class="fab fa-line"></i></a>
-      </div>
+<a href="/categories/r">
+    <kbd class="item-cat"> R </kbd>
+        </a>
+        
     
-    
-      <p>Enter a text here.</p>
-    
-     © 2018    ·  Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/naro143/hugo-coder-portfolio">CoderPortfolio</a>. 
-
-  </section>
-</footer>
-<div class="fixed-bar">
-  <section class="container">
-    
-      <p id="privateTriggerText">Do you want to know me more private?→<a id="privateTrigger">Click!</a></p>
+    <a href="/tags/r-markdown">
+        <kbd class="item-tag"> R Markdown </kbd>
+            </a>
+            
+    <a href="/tags/plot">
+        <kbd class="item-tag"> plot </kbd>
+            </a>
+            
+    <a href="/tags/regression">
+        <kbd class="item-tag"> regression </kbd>
+            </a>
+            
+        
+        </div>
+            
+        
     
     
-      <div class="sns-shares pc-sns-shares">
-        <a class="sns-share twitter-share" href="https://twitter.com/intent/tweet?original_referer=%2ftags%2fplot%2f&ref_src=twsrc%5Etfw&text=plot Otago%20Core%20Repository&tw_p=tweetbutton&url=%2ftags%2fplot%2f"><i class="fab fa-twitter"></i></a>
-        <a class="fb btn sns-share fb-share" href="http://www.facebook.com/share.php?u=%2ftags%2fplot%2f" onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fab fa-facebook-f"></i></a>
-        <a class="sns-share hatena-share" href="http://b.hatena.ne.jp/entry//tags/plot/"  data-hatena-bookmark-layout="touch" data-hatena-bookmark-width="40" data-hatena-bookmark-height="40" title="このエントリーをはてなブックマークに追加"><i class="fas fa-bookmark"></i></a>
-        <a class="sns-share line-share" href="https://social-plugins.line.me/lineit/share?url=%2ftags%2fplot%2f"><i class="fab fa-line"></i></a>
-       </div>
-    
-  </section>
-</div>
+</main>
 
-      
-    </main>
 
-    
 
-  <script src="/js/app.js"></script>
-  
-  <script>
-  (function($) {
-    $(function() {
-      $('#privateTrigger').on('click', function() {
-        $('.private').slideToggle();
-        $('#privateTriggerText').text("Thank You! Please share it if you like it→");
-      });
-    });
-   })(jQuery);
-  </script>
-  
-  </body>
+
+        <footer id = "bigfooter">
+            <div style = "padding:15px;">
+                <p>Powered by <a href="https://gohugo.io">Hugo</a>. Themed by <a href="https://github.com/nathancday/min_night">min_night</a>.
+                </p>
+                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"
+                title="Creative Commons Attribution 4.0 International license">
+                <i class="fab fa-creative-commons" aria-hidden="true"></i> Attribution 4.0 International license
+                </a>
+            </div>
+        </footer>
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+          gtag('config', '');
+        </script>
+       
+    </body>
+
 </html>
+

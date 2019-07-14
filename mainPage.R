@@ -1,0 +1,1 @@
+blogdown::new_site(theme = "nathancday/min_night")

@@ -1,97 +1,79 @@
-baseurl = "http://www.example.com"
-title = "Otago Core Repository"
+baseURL = "/"
+languageCode = "en-us"
+title = "min_night"
+description = "An easy reading Hugo blog with night-mode."
+theme = "min_night"
+disqusShortname = ""
+googleAnalytics = ""
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "public/"]
 
-theme = "hugo-coder-portfolio"
-
-DefaultContentLanguage = "en"
-
-paginate = 20
-
-pygmentsstyle = "b2"
-pygmentscodefences = true
-pygmentscodefencesguesssyntax = true
-pygmentsUseClasses = true
-
-disqusShortname = "yourdiscussshortname"
+[permalinks]
+    post = "/:year/:month/:day/:slug/"
 
 [params]
-    author = "Bob Dagg"
-    description = "Website for the University of Otago Core Repository"
-    keywords = ""
-    info = ""
-    avatarurl = "images/avatar.jpg"
-    footercontent = "Enter a text here."
-    fixedbarContent = "Do you want to know me more private?→"
-    fixedbarContentAfter = "Thank You! Please share it if you like it→"
+    author = "Nate Day"
+    description = "An easy reading Hugo blog with night-mode."
+    logo = "favicon/android-chrome-192x192.png"
+    twitterAuthor = "@natedayta"
+    githubUsername = "nathancday"
+    accent = "#386890" # dark colors do best
+    backgroundColor = "#f5f5f5"
+    font = "Mina" # should match the name on Google Fonts!
+    highlight = true
+    highlightStyle = "lakeside-light" # make this match accent
+    highlightLanguages = ["r", "bash", "go"]
 
-    hideCredits = false
-    hideCopyright = false
-
-    snsShare = true
-
-    thumbnail = "images/tn.png"
-
-    # Custom CSS
-    custom_css = []
-
-    # Alignment of Mobile Menu items
-    itemscentered = true
-
-    # RTL support
-    rtl = false
-
-    langseparator = "|"
-
-[[params.social]]
-    name = ""
+# adjust these as you see fit
+[[menu.main]]
+    url = "/"
+    name = "Home"
     weight = 1
-    url = ""
-[[params.social]]
-    name = ""
+
+[[menu.main]]
+    url = "/post/"
+    name = "Posts"
     weight = 2
-    url = ""
-[[params.social]]
-    name = ""
+
+[[menu.main]]
+    url = "/equipment/Equipment"
+    name = "Equipment"
     weight = 3
-    url = ""
+    
+[[menu.main]]
+    url = "/tags/"
+    name = "Tags"
+    weight = 4
+    
+ [[menu.main]]
+    url = "/forms/"
+    name = "Forms"
+    weight = 5   
 
-[languages]
-    [languages.en]
-        languagecode = "en"
-        languagename = "English" # The language name to be displayed in the selector.
-        title = "Otago Core Repository"
+# Social icons to be shown on the right-hand side of the navigation bar
+# The "name" field should match the name of the icon to be used
+# The list of available icons can be found at http://fontawesome.io/icons/
 
-        # You can configure the theme parameter for each language.
-        [languages.en.params]
-            author = "University of Otago Core Repository"
-            info = ""
-            description = ""
-            keywords = ""
+[[menu.icon]]
+    url = "mailto:nathancday@gmail.com"
+    name = "far fa-envelope"
+    weight = 1
 
-        [languages.en.menu] # It is possible to change the menu too.
+[[menu.icon]]
+    url = "https://github.com/NathanCDay"
+    name = "fab fa-github"
+    weight = 2
 
-            [[languages.en.menu.main]]
-                name = "About"
-                weight = 1.0
-                url = "about"
-            [[languages.en.menu.main]]
-                name = "Test"
-                weight = 1.0
-                url = "about"
-                
-            [[languages.en.menu.main]]
-                name = "Blog"
-                weight = 2.0
-                url = "posts"
+[[menu.icon]]
+    url = "https://twitter.com/natedayta/"
+    name = "fab fa-twitter"
+    weight = 3
 
-            [[languages.en.menu.main]]
-                name = "Projects"
-                weight = 3
-                url = "projects"
-            [[languages.en.menu.main]]
-                name = "Contact me"
-                weight = 5
-                url = "contact"
+[[menu.icon]]
+    url = "https://www.linkedin.com/in/nathan-day-59b48435/"
+    name = "fab fa-linkedin"
+    weight = 4
 
-
-
+[[menu.icon]]
+    url = "https://www.stackoverflow.com/users/5878751/nate"
+    name = "fab fa-stack-overflow"
+    weight = 5
